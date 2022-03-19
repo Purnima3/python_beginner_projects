@@ -1,0 +1,44 @@
+import random
+
+user = 0
+computer = 0
+
+optionsofgame=["rock" ,"paper","scissors"]
+while True:
+    user_input = input("enter rock/paper/scissors or Qto quit:  ").lower()
+    if user_input == 'q':
+        break
+    
+    if user_input not in optionsofgame:
+        continue
+    
+    random_no = random.randint(0,2)
+    # rock is 0
+    # paper is 1
+    # scissors is 2
+
+    computer_pick = optionsofgame[random_no]
+    print("computer picked", computer_pick + ".")
+    
+    if user_input == "rock" and computer_pick == "scissors":
+        print("you won!")
+        user += 1
+        
+     
+    elif user_input == "paper" and computer_pick == "rock":
+        print("you won!")
+        user += 1
+       
+
+     
+    elif user_input == "scissors" and computer_pick =="paper":
+        print("you won!")
+        user += 1
+    
+    else:
+        print("you lost!!")
+        computer += 1
+
+print("you won",user,"times.")
+print("computer won",computer,"times.")
+print("good bye!")
